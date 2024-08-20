@@ -2,6 +2,7 @@ import React from "react";
 import Counter from "../Counter/Counter";
 import { CounterWithState } from "../Counter/Counter";
 import Cards from "../Cards/Cards";
+import AddUser from "../AddUser/AddUser";
 
 const Users = [
   { name: "Mohamed", age: 24, city: "cairo", edu: "cs", id: 3 },
@@ -15,7 +16,8 @@ const App = () => {
   return (
     <>
       {/*           <Counter />
-          <CounterWithState /> */}
+          <CounterWithState /> */}\
+      <AddUser />
       <Cards users={Users} name={"mohamed"} />
     </>
   );

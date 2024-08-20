@@ -2,6 +2,7 @@ import { useRef } from "react"
 
 const UncontrolledForm = ()=>{
      const city = useRef("")
+     
      const inputHandler = (e) =>{
           console.log(e.target.value)
           document.getElementById("p2").innerHTML = e.target.value
