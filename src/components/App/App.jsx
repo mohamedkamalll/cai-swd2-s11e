@@ -1,16 +1,10 @@
-import React , {useState} from "react";
+import React , {useState,useEffect} from "react";
 import Counter from "../Counter/Counter";
 import { CounterWithState } from "../Counter/Counter";
 import Cards from "../Cards/Cards";
 import AddUser from "../AddUser/AddUser";
 
-const users = [
-  { name: "Mohamed", age: 24, city: "cairo", edu: "cs", id: 3 },
-  { name: "Mario", age: 19, city: "Alex", edu: "dfvsfsed", id: 4 },
-  { name: "Mariam", age: 22, city: "cairo", edu: "IS", id: 1 },
-  { name: "Mariam", age: 25, city: "qena", edu: "CS", id: 12 },
-  { name: "Nora", age: 20, city: "cairo", edu: "cs", id: 2 },
-];
+
 
 const App = () => {
   const [Users,setUsers] = useState(users)
@@ -18,7 +12,20 @@ const App = () => {
   const [cars,setCars ] = useState([])
 
 //https://freetestapi.com/api/v1/cars
-  fetch("https://freetestapi.com/api/v1/cars").then((data)=> data.json()).then((d)=>setCars(d))
+  useEffect(() => {
+    try {
+      fetch("https://freetestapi.com/api/v1/cars")
+      .then(res => res.json())
+      .then(data => {
+        setCars(data)
+        console.log(data)
+      })
+    }catch(e){
+      console.log(e)
+    }
+  }, []);
+  // .then((data)=> data.json())
+  // .then((d)=>setCars(d))
 
   const addUser = (newUser) =>{
    // Users.push(newUser)

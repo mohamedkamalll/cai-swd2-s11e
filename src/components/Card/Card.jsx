@@ -1,7 +1,7 @@
 import React from "react";
 
 const Card = ({user,del})=>{
-     console.log(user)
+     //console.log(user)
      const deleteHndler = () =>{
           console.log(user.id)
           del(user.id)
